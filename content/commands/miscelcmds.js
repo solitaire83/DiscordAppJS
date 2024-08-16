@@ -1,4 +1,4 @@
-module.exports = (cmd, message, AUTHOR, PREFIX, AUTHORID) => {
+module.exports = (cmd, message) => {
     if (cmd === 'hello') {
         message.channel.send("hi, how are you");
     }
@@ -8,10 +8,10 @@ module.exports = (cmd, message, AUTHOR, PREFIX, AUTHORID) => {
     }
 
     if(cmd === 'author') {
-        message.channel.send(`So, the author is ${AUTHOR}`);
+        message.channel.send(`So, the author is ${process.env.AUTHOR}`);
     } else if(cmd === 'authorid') {
-        message.channel.send(`yeah, the author id is ${AUTHORID}`)
+        message.channel.send(`yeah, the author id is ${process.env.AUTHORID}`);
     } else if(cmd === 'prefix') {
-        message.channel.send(`the prefix is ${PREFIX}`)
+        message.channel.send(`the prefix is ${process.env.PREFIX}`);
     }
 };
